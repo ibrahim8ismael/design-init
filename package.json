@@ -1,0 +1,21 @@
+{
+  "name": "design-init",
+  "version": "1.0.0",
+  "description": "CLI tool to bootstrap design systems with shadcn/ui, impeccable.style skills, and DESIGN.md from getdesign.md",
+  "bin": {
+    "design-init": "./bin/design-init.js"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/.bin/uvu test"
+  },
+  "keywords": ["design-system", "shadcn", "cli", "design-init"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@clack/prompts": "^0.9.1",
+    "commander": "^13.1.0",
+    "execa": "^9.5.2",
+    "picocolors": "^1.1.1"
+  }
+}
