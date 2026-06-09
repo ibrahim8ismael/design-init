@@ -31,22 +31,37 @@ export async function addComponents({ components } = {}) {
     return [];
   }
 
-  const componentsToAdd = chosen.includes('__all__')
-    ? SHADCN_COMPONENTS
-    : chosen;
+  const isAll = chosen.includes('__all__');
 
-  p.log.step(`Adding ${componentsToAdd.length} shadcn/ui components...`);
+  if (isAll) {
+    p.log.step('Adding all shadcn/ui components...');
+
+    const result = await runCommand('npx', [
+      'shadcn@latest', 'add', '--all', '-y',
+    ]);
+
+    if (result.exitCode === 0) {
+      p.log.success('All components added');
+      return '__all__';
+    }
+
+    p.log.error('Failed to add components');
+    if (result.stderr) p.log.error(result.stderr);
+    return [];
+  }
+
+  p.log.step(`Adding ${chosen.length} shadcn/ui components...`);
 
   const result = await runCommand('npx', [
-    'shadcn@latest', 'add', ...componentsToAdd, '-y',
+    'shadcn@latest', 'add', ...chosen, '-y',
   ]);
 
   if (result.exitCode === 0) {
-    p.log.success(`Added ${componentsToAdd.length} components`);
+    p.log.success(`Added ${chosen.length} components`);
   } else {
     p.log.warn('Some components may have failed');
     if (result.stderr) p.log.error(result.stderr);
   }
 
-  return componentsToAdd;
+  return chosen;
 }

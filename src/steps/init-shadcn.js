@@ -7,7 +7,7 @@ export async function initShadcn({ force } = {}) {
 
   if (configExists && !force) {
     p.log.info('shadcn/ui already initialized (components.json found)');
-    return false;
+    return 'skipped';
   }
 
   p.log.step('Initializing shadcn/ui...');
@@ -18,9 +18,9 @@ export async function initShadcn({ force } = {}) {
 
   if (result.exitCode === 0) {
     p.log.success('shadcn/ui initialized');
-    return true;
+    return 'done';
   }
 
   p.log.error('shadcn init failed: ' + (result.stderr || 'Unknown error'));
-  return false;
+  return 'failed';
 }

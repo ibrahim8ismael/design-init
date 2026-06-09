@@ -1,11 +1,14 @@
 import { execa } from 'execa';
 
 export async function runCommand(bin, args, options = {}) {
+  const { silent, ...execaOptions } = options;
+
   const result = await execa(bin, args, {
-    stdio: options.silent ? 'pipe' : 'inherit',
+    stdio: silent ? 'pipe' : 'inherit',
     reject: false,
-    ...options,
+    ...execaOptions,
   });
+
   return result;
 }
 
