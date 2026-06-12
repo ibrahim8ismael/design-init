@@ -9,8 +9,20 @@
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/.bin/uvu test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrahim8ismael/design-init.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ibrahim8ismael/design-init/issues"
+  },
+  "homepage": "https://github.com/ibrahim8ismael/design-init#readme",
+  "files": [
+    "bin/",
+    "src/"
+  ],
   "keywords": ["design-system", "shadcn", "cli", "design-init"],
-  "author": "",
+  "author": "Ibrahim Ismail",
   "license": "MIT",
   "dependencies": {
     "@clack/prompts": "^0.9.1",
