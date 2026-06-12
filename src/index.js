@@ -22,7 +22,7 @@ export function createProgram() {
   program
     .command('init')
     .description('Initialize a design system in your project')
-    .option('-a, --agent <agent>', 'AI coding agent (opencode, claude-code, codex, gemini-cli)')
+    .option('-a, --agent <agent>', 'AI coding agent (opencode, claude-code, codex, gemini-cli, cursor, pi, github-copilot, kiro-cli, trae, trae-cn, rovodev, qoder)')
     .option('-c, --components <components>', 'Comma-separated shadcn components to add')
     .option('-d, --design <design>', 'Design system slug from getdesign.md (e.g. vercel, stripe)')
     .option('-f, --force', 'Force reinitialize shadcn even if components.json exists')

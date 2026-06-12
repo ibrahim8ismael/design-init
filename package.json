@@ -1,9 +1,9 @@
 {
   "name": "design-init",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI tool to bootstrap design systems with shadcn/ui, impeccable.style skills, and DESIGN.md from getdesign.md",
   "bin": {
-    "design-init": "./bin/design-init.js"
+    "design-init": "bin/design-init.js"
   },
   "type": "module",
   "scripts": {
@@ -21,7 +21,12 @@
     "bin/",
     "src/"
   ],
-  "keywords": ["design-system", "shadcn", "cli", "design-init"],
+  "keywords": [
+    "design-system",
+    "shadcn",
+    "cli",
+    "design-init"
+  ],
   "author": "Ibrahim Ismail",
   "license": "MIT",
   "dependencies": {
